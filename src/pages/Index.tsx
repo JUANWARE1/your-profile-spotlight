@@ -40,15 +40,16 @@ interface Experience {
 
 const Index = () => {
   const { toast } = useToast();
-  
+
   const [personalInfo, setPersonalInfo] = useState<PersonalInfo>({
-    name: 'Tu Nombre',
+    name: 'Juan Jesús Huerta del Toro',
     profession: 'Desarrollador Full Stack',
-    description: 'Desarrollador apasionado con experiencia en crear soluciones digitales innovadoras. Me especializo en desarrollo web y móvil, siempre buscando las mejores prácticas y tecnologías emergentes.',
+    description: 'Desarrollador Full-stack con más de 2 años de experiencia creando soluciones digitales eficientes, escalables y centradas en el usuario. Actualmente lidero el equipo de desarrollo en Udigital Business, combinando habilidades técnicas con visión estratégica como Jefe de Ventas. Con formación en QA Testing y UX/UI, aseguro productos de alta calidad y excelente usabilidad, aplicando metodologías ágiles y enfoque al cliente. Mi perfil combina liderazgo, comunicación y experiencia técnica para guiar proyectos de principio a fin.'
+    ,
     skills: ['JavaScript', 'React', 'Node.js', 'Python', 'MongoDB'],
-    location: 'Ciudad, País',
-    email: 'tu.email@ejemplo.com',
-    phone: '+1234567890'
+    location: 'Jalisco, México',
+    email: 'juan.jesus1518@gmail.com',
+    phone: '+523320343573'
   });
 
   const [projects, setProjects] = useState<Project[]>([
@@ -65,13 +66,49 @@ const Index = () => {
   const [experiences, setExperiences] = useState<Experience[]>([
     {
       id: '1',
-      position: 'Desarrollador Senior',
-      company: 'Tech Company',
-      startDate: '2022-01',
+      position: 'Full Stack Developer',
+      company: 'UDigital Business',
+      startDate: '2023-07',
       endDate: '',
       current: true,
-      description: 'Desarrollo de aplicaciones web usando React y Node.js. Liderazgo de equipo y mentoreo de desarrolladores junior.'
-    }
+      description: 'Creación de aplicaciones web escalables utilizando React, Next.js, Node.js, Firebase, MongoDB y PostgreSQL, con enfoque en rendimiento y experiencia de usuario.'
+    },
+    {
+      id: '1',
+      position: 'QA Tester',
+      company: 'UDigital Business',
+      startDate: '2023-07',
+      endDate: '',
+      current: true,
+      description: 'Diseño y ejecución de pruebas manuales y automatizadas (Postman, Cypress, Selenium), garantizando calidad en ciclos ágiles y validando usabilidad con enfoque UX/UI. '
+    },
+    {
+      id: '1',
+      position: 'Liderazgo Técnico',
+      company: 'UDigital Business',
+      startDate: '2023-07',
+      endDate: '',
+      current: true,
+      description: 'Gestión de equipos multidisciplinarios bajo metodologías ágiles (Scrum/Kanban), coordinando proyectos desde la planificación hasta su implementación.'
+    },
+    {
+      id: '1',
+      position: 'Gestión Comercial',
+      company: 'UDigital Business',
+      startDate: '2023-07',
+      endDate: '',
+      current: true,
+      description: 'Responsable de estrategias de prospección, presentación de propuestas técnicas y cierre de proyectos, alineando soluciones a las necesidades del cliente.'
+    },
+    {
+      id: '1',
+      position: 'Proyectos Freelance',
+      company: 'UDigital Business',
+      startDate: '2023-07',
+      endDate: '',
+      current: true,
+      description: 'Desarrollo integral de ERPs, aplicaciones y sitios web personalizados, liderando todo el proceso desde los requerimientos hasta el soporte post-lanzamiento.'
+    },
   ]);
 
   const [showPersonalForm, setShowPersonalForm] = useState(false);
@@ -177,7 +214,7 @@ const Index = () => {
                   </Badge>
                 ))}
               </div>
-              <Button 
+              <Button
                 onClick={() => setShowPersonalForm(true)}
                 className="bg-white text-blue-700 hover:bg-blue-50 font-semibold px-8 py-3"
               >
@@ -208,7 +245,7 @@ const Index = () => {
                 Una selección de mis trabajos más destacados
               </p>
             </div>
-            <Button 
+            <Button
               onClick={() => setShowProjectForm(true)}
               className="bg-blue-600 hover:bg-blue-700"
             >
@@ -216,13 +253,13 @@ const Index = () => {
               Agregar Proyecto
             </Button>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg">
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -263,7 +300,7 @@ const Index = () => {
                     ))}
                   </div>
                   {project.link && (
-                    <a 
+                    <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -287,11 +324,10 @@ const Index = () => {
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 Experiencia Profesional
               </h2>
-              <p className="text-gray-600 text-lg">
-                Mi trayectoria profesional y logros
-              </p>
+              
+               
             </div>
-            <Button 
+            <Button
               onClick={() => setShowExperienceForm(true)}
               className="bg-blue-600 hover:bg-blue-700"
             >
@@ -367,7 +403,7 @@ const Index = () => {
             Estoy disponible para nuevos proyectos y oportunidades de colaboración.
             ¡Hablemos sobre tu próxima idea!
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a
               href={`mailto:${personalInfo.email}`}
